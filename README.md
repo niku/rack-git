@@ -1,6 +1,6 @@
 # Rack::Git
 
-TODO: Write a gem description
+It serves contents in a git repository like Rack::File.
 
 ## Installation
 
