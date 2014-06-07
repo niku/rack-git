@@ -1,0 +1,9 @@
+0000000000000000000000000000000000000000 cbebb01aabeaca0fc9e27dc46596526a9fa666dd niku <niku@niku.name> 1401612400 +0900	commit (initial): First commit (do nothing)
+cbebb01aabeaca0fc9e27dc46596526a9fa666dd d410e655d6b2fdc9fe70fd7963b60a4b6ada59d2 niku <niku@niku.name> 1401628938 +0900	commit: Add README.md
+d410e655d6b2fdc9fe70fd7963b60a4b6ada59d2 b7d51edbaf13fe7c11f84c95c8a9eb5ecc26e2e0 niku <niku@niku.name> 1401636759 +0900	commit: Add file that indicates the repository root
+b7d51edbaf13fe7c11f84c95c8a9eb5ecc26e2e0 e59b4bf0f6afe4079d4d164be2e688a3e0b689cc niku <niku@niku.name> 1401636904 +0900	commit (amend): Add file that indicates the repository root
+e59b4bf0f6afe4079d4d164be2e688a3e0b689cc 120f0b7da8e645efba987248a5e9b6f5f79533c3 niku <niku@niku.name> 1401837395 +0900	commit: $ curl -o pointing_hand_cursor.png http://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Pointing_hand_cursor_vector.svg/200px-Pointing_hand_cursor_vector.svg.png
+120f0b7da8e645efba987248a5e9b6f5f79533c3 bc6b1e7b9ae4894a48e4251520b5cca6719036a8 niku <niku@niku.name> 1401837770 +0900	commit (amend): Obtain image file
+bc6b1e7b9ae4894a48e4251520b5cca6719036a8 7d15fc37cc819e526e56e0628d132292a7723095 niku <niku@niku.name> 1402063506 +0900	commit: Add file that using multibyte
+7d15fc37cc819e526e56e0628d132292a7723095 eff813ce8fd31bf9e22940043fc0dbc248bbe667 niku <niku@niku.name> 1402063645 +0900	commit (amend): Add file that using multibyte
+eff813ce8fd31bf9e22940043fc0dbc248bbe667 5c45e9087ca93476015867cd59a94adb7a648c94 niku <niku@niku.name> 1402063652 +0900	commit (amend): Add file that using multibyte
