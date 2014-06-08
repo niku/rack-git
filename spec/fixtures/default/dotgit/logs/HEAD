@@ -7,3 +7,5 @@ e59b4bf0f6afe4079d4d164be2e688a3e0b689cc 120f0b7da8e645efba987248a5e9b6f5f79533c
 bc6b1e7b9ae4894a48e4251520b5cca6719036a8 7d15fc37cc819e526e56e0628d132292a7723095 niku <niku@niku.name> 1402063506 +0900	commit: Add file that using multibyte
 7d15fc37cc819e526e56e0628d132292a7723095 eff813ce8fd31bf9e22940043fc0dbc248bbe667 niku <niku@niku.name> 1402063645 +0900	commit (amend): Add file that using multibyte
 eff813ce8fd31bf9e22940043fc0dbc248bbe667 5c45e9087ca93476015867cd59a94adb7a648c94 niku <niku@niku.name> 1402063652 +0900	commit (amend): Add file that using multibyte
+5c45e9087ca93476015867cd59a94adb7a648c94 d3a8a0f47f3ce8289625ae6c35aeff12c12d8653 niku <niku@niku.name> 1402188057 +0900	commit: Introduce directory structure
+d3a8a0f47f3ce8289625ae6c35aeff12c12d8653 1de49bf451d58d43b5e42a0cc689d464e6b18535 niku <niku@niku.name> 1402188175 +0900	commit (amend): Introduce directory structure

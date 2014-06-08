@@ -63,6 +63,16 @@ module Rack
 
       end
 
+      describe "serve directories" do
+        context "when access '/sub-dir'" do
+          let(:access_path) { "/sub-dir/" }
+          it { is_expected.to be_ok }
+          it { expect(subject.body).to match(/sub-dir\.txt/) }
+          it { expect(subject.body).to match(/nested-dir1\//) }
+          it { expect(subject.body).to match(/nested-dir2\//) }
+        end
+      end
+
     end
 
   end
