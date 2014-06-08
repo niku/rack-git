@@ -5,14 +5,19 @@ require "rack/mime"
 module Rack
   module Git
     class File
+      FILE_CONVERTER = -> (file, env) {
+        file
+      }
+
       DIRECTORY_CONVERTER = -> (entries, env) {
         list = entries.map { |e| %Q!<li><a href="#{e}">#{e}</a></li>! }
         "<ul><li><a href=\"../\">../</a></li>#{list.join}</ul>"
       }
 
-      def initialize(git_path, mime = Rack::Mime, dirctory_converter = DIRECTORY_CONVERTER)
+      def initialize(git_path, mime: Rack::Mime, file_converter: FILE_CONVERTER, dirctory_converter: DIRECTORY_CONVERTER)
         @repository = Rugged::Repository.new git_path
         @mime = mime
+        @file_converter = file_converter
         @directory_converter = dirctory_converter
       end
 
@@ -51,7 +56,7 @@ module Rack
         case rugged_object = @repository.lookup(oid)
         when Rugged::Blob
           mime_type = @mime.mime_type(::File.extname(unescaped_path))
-          [200, { "Content-Type" => mime_type }, [rugged_object.content]]
+          [200, { "Content-Type" => mime_type }, [@file_converter.call(rugged_object.content, env)]]
         when Rugged::Tree
           entries = []
           rugged_object.each { |e|
