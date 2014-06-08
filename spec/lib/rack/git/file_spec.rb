@@ -64,6 +64,14 @@ module Rack
       end
 
       describe "serve directories" do
+
+        context "when access root directory" do
+          let(:access_path) { "/" }
+          it { is_expected.to be_ok }
+          it { is_expected.to match(/repository-root\.txt/) }
+          it { is_expected.to match(/sub-dir\//) }
+        end
+
         context "when access '/sub-dir'" do
           let(:access_path) { "/sub-dir/" }
           it { is_expected.to be_ok }

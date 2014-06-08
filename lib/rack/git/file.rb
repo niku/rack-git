@@ -18,24 +18,33 @@ module Rack
 
       def call(env)
         unescaped_path = Rack::Utils.unescape(env["PATH_INFO"])
-        walker =
-          @repository.
-          head.
-          target.
-          tree.
-          walk(:postorder)
-        oid = walker.find(->{ ["", {}] }) { |root, entry|
-          case entry[:type]
-          when :blob
-            unescaped_path == "/#{root}#{entry[:name]}"
-          when :tree
-            # directory expects trailing slash
-            unescaped_path == "/#{root}#{entry[:name]}/"
+        oid =
+          if unescaped_path == "/"
+            @repository.
+              head.
+              target.
+              tree.
+              oid
           else
-            # never become here
-            raise "Something wrong: #{e}"
+            walker =
+              @repository.
+              head.
+              target.
+              tree.
+              walk(:postorder)
+            oid = walker.find(->{ ["", {}] }) { |root, entry|
+              case entry[:type]
+              when :blob
+                unescaped_path == "/#{root}#{entry[:name]}"
+              when :tree
+                # directory expects trailing slash
+                unescaped_path == "/#{root}#{entry[:name]}/"
+              else
+                # never become here
+                raise "Something wrong: #{e}"
+              end
+            }[1][:oid]
           end
-        }[1][:oid]
 
         return [404, {}, []] if oid.nil?
 
