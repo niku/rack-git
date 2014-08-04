@@ -14,7 +14,10 @@ module Rack
         "<ul><li><a href=\"../\">../</a></li>#{list.join}</ul>"
       }
 
-      def initialize(git_path, mime: Rack::Mime, file_converter: FILE_CONVERTER, directory_converter: DIRECTORY_CONVERTER)
+      def initialize(git_path,
+                     mime: Rack::Mime,
+                     file_converter: FILE_CONVERTER,
+                     directory_converter: DIRECTORY_CONVERTER)
         @repository = Rugged::Repository.new git_path
         @mime = mime
         @file_converter = file_converter
