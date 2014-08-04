@@ -71,7 +71,7 @@ module Rack
               raise "Something wrong: #{e}"
             end
           }
-          [200, {"Content-Type" => "text/html" }, [@directory_converter.call(entries, env)]]
+          [200, { "Content-Type" => "text/html" }, [@directory_converter.call(entries, env)]]
         end
       end
     end
