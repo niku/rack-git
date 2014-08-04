@@ -53,7 +53,7 @@ module Rack
 
         context "when access text file" do
           let(:access_path) { "/repository-root.txt" }
-          it { expect(subject.headers["Content-Type"]).to eq "text/plain" }
+          it { expect(subject.headers["Content-Type"]).to eq "text/plain; charset=UTF-8" }
         end
 
         context "when access binary file" do

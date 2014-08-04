@@ -59,6 +59,8 @@ module Rack
         case rugged_object = @repository.lookup(oid)
         when Rugged::Blob
           mime_type = @mime.mime_type(::File.extname(unescaped_path))
+          mime_type = mime_type.dup # prepare for bang method
+          mime_type << "; charset=UTF-8" if mime_type.start_with?("text")
           [200, { "Content-Type" => mime_type }, [@file_converter.call(rugged_object.content, env)]]
         when Rugged::Tree
           entries = []
@@ -74,7 +76,7 @@ module Rack
               raise "Something wrong: #{e}"
             end
           }
-          [200, { "Content-Type" => "text/html" }, [@directory_converter.call(entries, env)]]
+          [200, { "Content-Type" => "text/html; charset=UTF-8" }, [@directory_converter.call(entries, env)]]
         end
       end
     end
